@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="card offset-2 col-md-3">
+    <div class="card col-md-3">
       <div class="card-body tex-center d-flex align-items-center flex-column">
         <img
           height="128"
@@ -65,12 +65,17 @@
         </div>
       </div>
     </div>
+    <product-quantity></product-quantity>
   </div>
 </template>
 <script>
-import {eventBus} from '../main';
+import { eventBus } from "../main";
+import ProductQuantity from "./ProductQuantity.vue";
 
 export default {
+  components: {
+    productQuantity: ProductQuantity,
+  },
   data() {
     return {
       product: {
@@ -95,8 +100,8 @@ export default {
         count: null,
         price: null,
         totalPrice: null,
-        selectedImage: null
-      }
+        selectedImage: null,
+      };
     },
   },
 };
